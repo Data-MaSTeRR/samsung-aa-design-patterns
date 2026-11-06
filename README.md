@@ -33,7 +33,7 @@ classDiagram
     }
 
     Evidence <|.. EvidenceFolder : implements (Composite)
-    EvidenceFolder o-- Evidence : children (재귀적 트리 구성)
+    EvidenceFolder *-- Evidence : children (재귀적 트리 구성)
 
     %% ==========================================
     %% 2. PROXY PATTERN (접근 통제 & 지연 로딩)
