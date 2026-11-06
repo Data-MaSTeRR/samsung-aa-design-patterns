@@ -48,7 +48,7 @@ public class MediaProxy implements Evidence {
     public String open(String role) {
         // [Protection Proxy] 민감한 의료 사진에 대한 역할 기반 접근 제어 (RBAC)
         if (medical && !role.equals("손해사정사")) {
-            return "❌ [열람 거절] " + name + " 열람 불가 (" + role + " 권한 없음 - 의료법 및 개인정보보호법 준수)";
+            return "[열람 거절] " + name + " 열람 불가 (" + role + " 권한 없음 - 의료법 및 개인정보보호법 준수)";
         }
 
         // [Virtual Proxy] 실제 열람/재생 요청 시점에 비로소 무거운 원본 미디어 생성 및 로드
@@ -61,6 +61,6 @@ public class MediaProxy implements Evidence {
             }
         }
 
-        return "✔ [열람 성공] " + realMedia.read() + " (승인 사용자: " + role + ")";
+        return "[열람 성공] " + realMedia.read() + " (승인 사용자: " + role + ")";
     }
 }

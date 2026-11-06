@@ -58,11 +58,11 @@ public class EvidenceFolder implements Evidence {
             }
             if (child instanceof EvidenceFolder folder) {
                 String result = folder.openMedia(fileName, role);
-                if (!result.startsWith("❌ [파일 미발견]")) {
+                if (!result.startsWith("[파일 미발견]")) {
                     return result;
                 }
             }
         }
-        return "❌ [파일 미발견] " + fileName;
+        return "[파일 미발견] " + fileName;
     }
 }

@@ -7,7 +7,7 @@ package src.bridge;
 public abstract class Media {
     protected final String name;
     protected final int size;
-    protected final Storage storage; // ← Bridge: 저장소 인터페이스로 위임
+    protected final Storage storage; // Bridge: 저장소 인터페이스로 위임
 
     protected Media(String name, int size, Storage storage) {
         this.name = name;

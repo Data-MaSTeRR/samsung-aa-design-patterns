@@ -7,4 +7,4 @@ New-Item -ItemType Directory -Force $out | Out-Null
 $files = Get-ChildItem (Join-Path $PSScriptRoot 'src') -Recurse -Filter *.java | ForEach-Object { $_.FullName }
 & "$jdk\javac.exe" -encoding UTF-8 -d $out $files
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-& "$jdk\java.exe" '-Dfile.encoding=UTF-8' '-Dstdout.encoding=UTF-8' -cp $out Main
+& "$jdk\java.exe" '-Dfile.encoding=UTF-8' '-Dstdout.encoding=UTF-8' -cp $out src.Main

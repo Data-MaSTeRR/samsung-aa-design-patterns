@@ -15,6 +15,6 @@ public abstract class UploadDecorator implements Uploader {
 
     @Override
     public String process(String fileInfo) {
-        return inner.process(fileInfo) + " → " + step();
+        return inner.process(fileInfo) + " -> " + step();
     }
 }
