@@ -1,7 +1,12 @@
 package src.decorator;
 
-/** 가장 기본: 받기만 한다. */
+/**
+ * [Decorator - ConcreteComponent]
+ * 가장 안쪽의 기본 업로드 수신 처리.
+ */
 public class BasicUploader implements Uploader {
     @Override
-    public String upload() { return "수신"; }
+    public String process(String fileInfo) {
+        return fileInfo + " [수신]";
+    }
 }

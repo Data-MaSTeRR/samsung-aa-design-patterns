@@ -1,9 +1,16 @@
 package src.decorator;
 
-/** 번호판·얼굴 마스킹 */
+/**
+ * [Decorator - ConcreteDecorator]
+ * 개인정보 보호를 위한 차량 번호판 및 보행자 얼굴 마스킹 전처리.
+ */
 public class Mask extends UploadDecorator {
-    public Mask(Uploader inner) { super(inner); }
+    public Mask(Uploader inner) {
+        super(inner);
+    }
 
     @Override
-    protected String step() { return "마스킹"; }
+    protected String step() {
+        return "개인정보 마스킹";
+    }
 }

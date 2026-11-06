@@ -1,18 +1,35 @@
 package src.bridge;
 
-/** 미디어 쪽 (무엇을). 저장소는 직접 알지 않고 Storage 로만 연결된다. */
+/**
+ * [Bridge - Abstraction]
+ * 미디어 추상 클래스. 저장소(Storage) 구현체에 호출을 위임하는 '다리(Bridge)' 필드를 포함.
+ */
 public abstract class Media {
-    private final String name;
-    private final Storage storage;   // ← 이 한 줄이 "다리(bridge)"
+    protected final String name;
+    protected final int size;
+    protected final Storage storage; // ← Bridge: 저장소 인터페이스로 위임
 
-    protected Media(String name, Storage storage) {
+    protected Media(String name, int size, Storage storage) {
         this.name = name;
+        this.size = size;
         this.storage = storage;
     }
 
-    protected abstract String kind();
+    public abstract String kind();
 
-    public String upload() {
-        return storage.save(kind() + " " + name);
+    public String persist() {
+        return storage.save(kind() + " " + name, size);
+    }
+
+    public String read() {
+        return storage.load(kind() + " " + name);
+    }
+
+    public String name() {
+        return name;
+    }
+
+    public int size() {
+        return size;
     }
 }

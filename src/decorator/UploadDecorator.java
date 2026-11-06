@@ -1,8 +1,11 @@
 package src.decorator;
 
-/** 안쪽 처리를 먼저 하고, 내 단계를 덧붙인다. */
+/**
+ * [Decorator - Decorator]
+ * 부가 기능을 덧붙이기 위한 추상 데코레이터.
+ */
 public abstract class UploadDecorator implements Uploader {
-    private final Uploader inner;
+    protected final Uploader inner;
 
     protected UploadDecorator(Uploader inner) {
         this.inner = inner;
@@ -11,7 +14,7 @@ public abstract class UploadDecorator implements Uploader {
     protected abstract String step();
 
     @Override
-    public String upload() {
-        return inner.upload() + " → " + step();
+    public String process(String fileInfo) {
+        return inner.process(fileInfo) + " → " + step();
     }
 }

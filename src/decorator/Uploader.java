@@ -1,6 +1,9 @@
 package src.decorator;
 
-/** 업로드 처리. 어떤 단계를 거쳤는지 문자열로 돌려준다. */
+/**
+ * [Decorator - Component]
+ * 업로드 전처리 파이프라인 인터페이스.
+ */
 public interface Uploader {
-    String upload();
+    String process(String fileInfo);
 }
