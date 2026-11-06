@@ -1,8 +1,6 @@
 # 3조 발표 – 손해사정 사진·영상 처리·저장
 
-> 발표 시간: 약 5분 · 코드: [src/](file:///c:/Users/SDS/Desktop/usecase/team3-media/src) · 실행: `.\run.ps1`
-
----
+#### 조원: 어현경, 이기주, 심현우
 
 ## 슬라이드 1. 우리가 풀 문제
 
@@ -307,12 +305,6 @@ sequenceDiagram
 ---
 
 ## 부록. 라이브 데모 & 예상 질의응답
-
-**데모 실행 명령**
-```powershell
-cd C:\Users\SDS\Desktop\usecase\team3-media
-.\run.ps1
-```
 
 **예상 질문 & 답변**
 * **Q. Decorator와 Strategy의 차이는 무엇인가요?**
