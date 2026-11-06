@@ -31,7 +31,7 @@ classDiagram
     }
 
     Evidence <|.. EvidenceFolder : 구현
-    EvidenceFolder o-- Evidence : 자식 노드들 포함 (Composite)
+    EvidenceFolder *-- Evidence : 자식 노드들 포함 (Composite)
 
     %% ==========================================
     %% 2. PROXY PATTERN (접근 통제 & 지연 로딩)
@@ -124,7 +124,7 @@ classDiagram
 
     Uploader <|.. BasicUploader : 구현
     Uploader <|.. UploadDecorator : 구현
-    UploadDecorator o-- Uploader : 안쪽 처리를 감쌈 (Decorator)
+    UploadDecorator -- Uploader : 안쪽 처리를 감쌈 (Decorator)
     UploadDecorator <|-- Compress : 상속
     UploadDecorator <|-- Mask : 상속
     UploadDecorator <|-- Hash : 상속
